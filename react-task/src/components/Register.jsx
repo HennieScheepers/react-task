@@ -1,6 +1,6 @@
 import React from "react";
 
-import Button from "./Button";
+import ButtonComponent from "./ButtonComponent";
 import Select from "./Select";
 import Input from "./Input";
 
@@ -40,8 +40,11 @@ const Register = () => {
       ></Input>
 
       <div class="container w-100 d-flex flex-row justify-content-between p-0">
-        <Button innerText="Register" secondary={false}></Button>
-        <Button innerText="Login" secondary={true}></Button>
+        <ButtonComponent
+          innerText="Register"
+          secondary={false}
+        ></ButtonComponent>
+        <ButtonComponent innerText="Login" secondary={true}></ButtonComponent>
       </div>
     </form>
   );

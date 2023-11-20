@@ -2,7 +2,7 @@ import React from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const Button = ({ secondary, innerText }) => {
+const ButtonComponent = ({ secondary, innerText }) => {
   const isSecondaryButtonClass = secondary
     ? "btn btn-light w-25 border"
     : "btn btn-primary w-25";
@@ -13,4 +13,4 @@ const Button = ({ secondary, innerText }) => {
   );
 };
 
-export default Button;
+export default ButtonComponent;
