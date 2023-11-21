@@ -1,4 +1,5 @@
 import React, { useMemo } from "react";
+import PropTypes from "prop-types";
 
 const Select = ({ options }) => {
   const optionElements = useMemo(
@@ -18,6 +19,10 @@ const Select = ({ options }) => {
       </select>
     </div>
   );
+};
+
+Select.propTypes = {
+  options: PropTypes.array,
 };
 
 export default Select;

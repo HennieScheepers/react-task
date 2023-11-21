@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const Button = ({ secondary, label }) => {
   const isSecondaryButtonClass = secondary
@@ -9,6 +10,11 @@ const Button = ({ secondary, label }) => {
       {label}
     </button>
   );
+};
+
+Button.propTypes = {
+  secondary: PropTypes.bool,
+  label: PropTypes.string,
 };
 
 export default Button;
