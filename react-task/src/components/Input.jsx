@@ -1,7 +1,5 @@
 import React from "react";
 
-import "bootstrap/dist/css/bootstrap.min.css";
-
 const Input = ({ type, id, placeholder, helpText }) => {
   return (
     <div class="form-floating mb-3">

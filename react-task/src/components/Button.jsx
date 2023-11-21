@@ -1,16 +1,14 @@
 import React from "react";
 
-import "bootstrap/dist/css/bootstrap.min.css";
-
-const ButtonComponent = ({ secondary, innerText }) => {
+const Button = ({ secondary, label }) => {
   const isSecondaryButtonClass = secondary
     ? "btn btn-light w-25 border"
     : "btn btn-primary w-25";
   return (
     <button type="submit" class={isSecondaryButtonClass}>
-      {innerText}
+      {label}
     </button>
   );
 };
 
-export default ButtonComponent;
+export default Button;
