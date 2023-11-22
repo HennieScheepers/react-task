@@ -26,11 +26,11 @@ const Register = () => {
     school: "",
   });
 
-  const handleDataChange = (newValue) => {
+  const handleChange = (newValue) => {
     setRegisterData(newValue);
   };
 
-  const isMathcingPasswords =
+  const isMatchingPasswords =
     registerData.password === registerData.confirmPassword
       ? ""
       : "Passwords should match";
@@ -43,14 +43,14 @@ const Register = () => {
         id="firstName"
         placeholder="First name"
         value={registerData.firstName}
-        handleDataChange={handleDataChange}
+        onChange={handleChange}
       />
       <Input
         type="text"
         id="lastName"
         placeholder="Last name"
         value={registerData.lastName}
-        handleDataChange={handleDataChange}
+        onChange={handleChange}
       />
       <Input
         type="email"
@@ -58,42 +58,43 @@ const Register = () => {
         placeholder="Email address"
         helpText={"We'll never share your email with anyone else."}
         value={registerData.email}
-        handleDataChange={handleDataChange}
+        onChange={handleChange}
       />
       <Input
         type="text"
         id="username"
         placeholder="Username"
         value={registerData.username}
-        handleDataChange={handleDataChange}
+        onChange={handleChange}
       />
       <Input
         type="date"
         id="dateOfBirth"
         placeholder="Date of birth"
         value={registerData.datOfBirth}
-        handleDataChange={handleDataChange}
+        onChange={handleChange}
       />
       <Select
         options={schools}
         name="school"
         value={registerData.school}
-        handleDataChange={handleDataChange}
+        onChange={handleChange}
+        placeholder={"Select schools..."}
       ></Select>
       <Input
         type="password"
         id="password"
         placeholder="Password"
         value={registerData.password}
-        handleDataChange={handleDataChange}
+        onChange={handleChange}
       />
       <Input
         type="password"
         id="confirmPassword"
         placeholder="Confirm password"
         value={registerData.confirmPassword}
-        warningText={isMathcingPasswords}
-        handleDataChange={handleDataChange}
+        warningText={isMatchingPasswords}
+        onChange={handleChange}
       />
       <div class="container w-100 d-flex flex-row justify-content-between p-0">
         <Button label="Register" />

@@ -7,13 +7,13 @@ const Input = ({
   placeholder,
   helpText,
   value,
-  handleDataChange,
+  onChange,
   warningText,
 }) => {
-  const handleOnChange = (event) => {
+  const handleChange = (event) => {
     const target = event.target.name;
     const value = event.target.value;
-    handleDataChange((prevValue) => ({ ...prevValue, [target]: value }));
+    onChange((prevValue) => ({ ...prevValue, [target]: value }));
   };
 
   return (
@@ -25,7 +25,7 @@ const Input = ({
         placeholder={placeholder}
         value={value}
         name={id}
-        onChange={(event) => handleOnChange(event)}
+        onChange={handleChange}
         aria-describedby={helpText && "help"}
       ></input>
       <label for={id}>{placeholder}</label>
@@ -50,7 +50,7 @@ Input.propTypes = {
   helpText: PropTypes.string,
   value: PropTypes.string,
   name: PropTypes.string,
-  handleDataChange: PropTypes.func,
+  onChange: PropTypes.func,
   warningText: PropTypes.string,
 };
 

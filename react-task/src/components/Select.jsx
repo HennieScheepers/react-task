@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import PropTypes from "prop-types";
 
-const Select = ({ options, value, handleDataChange, name }) => {
+const Select = ({ options, value, onChange, name, placeholder }) => {
   const optionElements = useMemo(
     () =>
       options.map((option, index) => (
@@ -12,10 +12,10 @@ const Select = ({ options, value, handleDataChange, name }) => {
     [options]
   );
 
-  const handleOnChange = (event) => {
+  const handleChange = (event) => {
     const target = event.target.name;
     const value = event.target.value;
-    handleDataChange((prevValue) => ({ ...prevValue, [target]: value }));
+    onChange((prevValue) => ({ ...prevValue, [target]: value }));
   };
 
   return (
@@ -25,9 +25,9 @@ const Select = ({ options, value, handleDataChange, name }) => {
         aria-label="Select school"
         value={value}
         name={name}
-        onChange={(event) => handleOnChange(event)}
+        onChange={handleChange}
       >
-        <option>Select school...</option>
+        <option>{placeholder}</option>
         {optionElements}
       </select>
     </div>
@@ -36,7 +36,7 @@ const Select = ({ options, value, handleDataChange, name }) => {
 
 Select.propTypes = {
   options: PropTypes.array,
-  handleDataChange: PropTypes.func,
+  onChange: PropTypes.func,
   value: PropTypes.string,
   name: PropTypes.string,
 };
